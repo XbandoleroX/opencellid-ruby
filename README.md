@@ -41,6 +41,7 @@ At: csv_class.rb
 At: database_class.rb
 
 --> Add your cassandra User
+
 --> Add your cassandra Password
 
 
