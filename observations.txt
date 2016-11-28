@@ -1,0 +1,52 @@
+=begin
+____/\\\\\\\\\\\\\\\\\__/\\\\\\\\\\\\\\\\____/\\\________/\\\\\\\\\\\____IT4S______
+____\////////\\\//////__\///////\\\//////___/\\\\\______/\\\/////////\\\_TASK______
+__________\/\\\\___________\/\\\__________/\\\/\\\_____\//\\\______\///_FORCE______
+__________\/\\\\___________\/\\\________/\\\/\/\\\______\////\\\___________________
+__________\/\\\\___________\/\\\______/\\\/__\/\\\_________\////\\\________________
+__________\/\\\\___________\/\\\____/\\\\\\\\\\\\\\\\_________\////\\\_____________
+_________\\/\\\\___________\/\\\___\///////////\\\//___/\\\______\//\\\____________
+_____/\\\\\\\\\\\\\\\\\____\/\\\_____________\/\\\____\///\\\\\\\\\\\/_@IT4sMx_____
+____\/////////////////_____\///______________\///_______\///////////_@julianstafari
+=end
+
+->Keyspace opencellid structure:
+
+CREATE KEYSPACE opencellid
+        WITH REPLICATION = {
+          'class': 'SimpleStrategy',
+          'replication_factor': 3
+        }
+
+->Antennas CSV structure:
+create table opencellid.antennas(
+    radio text,
+    mcc text,
+    net text,
+    area text,
+    cell text,
+    unit text,
+    lon text,
+    lat text,
+    range text,
+    samples text,
+    changeable text,
+    created text,
+    updated text,
+    averagSignal text,
+    timestamp text primary key);
+
+->Atennas table structure:
+
+create table opencellid.antennas(
+    antenna text primary key,
+    radio text,
+    mcc text,
+    mnc text,
+    lac text,
+    cid text,
+    unit text,
+    lon text,
+    lat text,
+    range text,
+    averagSignal text);
