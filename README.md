@@ -22,3 +22,20 @@ Dont forget about cassandra & configuration...
 
 ENJOY }:D
 
+FIRST USE:
+
+At: csv_class.rb
+
+--> Add your opencellid API key (http://opencellid.org/#action=database.requestForApiKey)
+
+At: database_class.rb
+
+--> Add your cassandra User
+--> Add your cassandra Password
+
+Then, ready to go...
+
+$ruby setup.rb
+
+for manual update:
+$ruby updater.rb
