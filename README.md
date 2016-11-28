@@ -56,3 +56,7 @@ for manual update:
 ```
  $ruby updater.rb
 ```
+
+## Author
+
+* **[@julianstafari](https://github.com/julianstafari)** -> https://twitter.com/julianstafari
