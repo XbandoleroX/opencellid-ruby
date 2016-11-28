@@ -3,15 +3,14 @@ openceliid-ruby-cassandra for analytics
 
 ## Dependencies:
 
-### GEM:
 * [--> cassandra-driver](https://rubygems.org/gems/cassandra-driver/) (3.0.3)
 
 ### Project structure:
 * [-> /]()
-* [--> csv_class.rb]()
-* [--> database_class.rb]()
-* [--> setup.rb]()
-* [--> updater.rb]()
+* [--> csv_class.rb](https://github.com/julianstafari/opencellid-ruby/blob/master/csv_class.rb)
+* [--> database_class.rb](https://github.com/julianstafari/opencellid-ruby/blob/master/database_class.rb)
+* [--> setup.rb](https://github.com/julianstafari/opencellid-ruby/blob/master/setup.rb)
+* [--> updater.rb](https://github.com/julianstafari/opencellid-ruby/blob/master/updater.rb)
 
 
 
