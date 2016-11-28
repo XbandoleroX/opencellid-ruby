@@ -32,7 +32,17 @@ class Csv_class
 
   def open_csv
 
-    @csv_obj = CSV.open(@csv_file)
+
+    if File.file?'cell_towers.csv.gz' == true
+      decompress_gz('cell_towers.csv.gz')
+      @csv_obj = CSV.open(@csv_file)
+    elsif File.file?'cell_towers.csv' == true
+      @csv_obj = CSV.open(@csv_file)
+
+    else
+      get_csv
+    end
+
 
   end
 
@@ -67,8 +77,8 @@ class Csv_class
 
     begin
 
-      #File.delete('cell_tower.csv.gz') if File.file? 'cell_tower.csv.gz'
-      File.delete('cell_tower.csv') if File.file? 'cell_tower.csv'
+      #File.delete('cell_towers.csv.gz') if File.file? 'cell_towers.csv.gz'
+      File.delete('cell_towers.csv') if File.file? 'cell_towers.csv'
       return true
 
     rescue
@@ -81,7 +91,7 @@ class Csv_class
 
   def decompress_gz(file)
     #The simpliest way!
-    exec("gzip -d cell_tower.csv.gz ")
+    exec("gzip -d cell_towers.csv.gz ")
 
   end
 
@@ -90,9 +100,9 @@ class Csv_class
     begin
 
       delete_past_csv
-      link = "http://opencellid.org/downloads/?apiKey=".concat(@api_key).concat("&filename=cell_tower.csv.gz")
+      link = "http://opencellid.org/downloads/?apiKey=".concat(@api_key).concat("&filename=cell_towers.csv.gz")
       tmp_down = open(link)
-      IO.copy_stream(tmp_down, Dir.pwd.to_s.concat('/cell_tower.csv.gz'))
+      IO.copy_stream(tmp_down, Dir.pwd.to_s.concat('/cell_towers.csv.gz'))
       return true
 
     rescue
